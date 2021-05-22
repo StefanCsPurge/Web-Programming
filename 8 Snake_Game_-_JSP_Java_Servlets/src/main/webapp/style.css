@@ -1,0 +1,36 @@
+form{
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    margin:0 auto;
+    background-color: #a4efcb;
+    text-align: center;
+    font-family: Monospace, monospace;
+}
+
+input{
+    margin-top: 5px;
+}
+
+table{
+    border: 1px dodgerblue;
+    font-family: "Britannic Bold", sans-serif;
+}
+
+td{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+button{
+    margin: 10px;
+}
