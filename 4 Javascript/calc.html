@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+				$('#add').on('click',add);
+				$('#multiply').on('click',multiply);
+				$('#divide').on('click',divide);
+				$('#subtract').on('click',subtract);
+			});
+			var calculator = {};    // hoisting
+
+			function validate(n) {
+			      return !isNaN(n);
+			}
+
+			function calculate(operation) {
+				if (initCalculator()) {
+					// var result = document.getElementById('resultSpan');
+					var result = $('#resultSpan')
+					switch (operation) {
+						case "add": {
+							result.html(calculator.a + calculator.b);
+							break;
+						};
+						case "subtract": {
+							result.html(calculator.a - calculator.b);
+							break;
+						};
+						case "multiply": {
+							result.html(calculator.a * calculator.b);	
+							break;
+						};
+						case "divide": {
+							result.html(calculator.a / calculator.b);
+							break;
+						};
+						default: {
+							break;
+						}
+					}
+				}
+			}
+
+			function add() {
+				calculate("add");
+			}
+
+			function multiply() {
+				calculate("multiply");
+			}
+
+			function subtract() {
+				calculate("subtract");
+			}
+
+			function divide() {
+				calculate("divide");
+			}
+
+			function initCalculator() {
+				var inputOne = document.getElementById("inputOne");
+				var inputTwo = document.getElementById("inputTwo");
+				var inputOneValue = inputOne.value;
+				var inputTwoValue = inputTwo.value;
+
+				if (!validate(inputOneValue) || !validate(inputTwoValue)) {
+					console.log("ERROR");
+					alert("Please enter valid numbers!");	
+					return false;
+				}
+				
+				calculator.a = parseInt(inputOneValue);
+				calculator.b = parseInt(inputTwoValue);
+				return true;
+			}
+
+		</script>
+	</head>
+
+	<body>
+			<input type="text" id="inputOne">
+			<input type="button" value="+" id="add">
+			<input type="button" value="-" id="subtract">
+			<input type="button" value="*" id="multiply">
+			<input type="button" value="/" id="divide">
+			<input type="text" id="inputTwo">
+			=
+			<span id="resultSpan">
+			</span>
+	</body>
+</html>
+

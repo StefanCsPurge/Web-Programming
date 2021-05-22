@@ -1,0 +1,87 @@
+<!--
+	Write a JavaScript which will be used in an HTML document that contains a table having at least 3 columns and several lines. 
+	When the user clicks the table header the script will sort in ascending order the elements from the current column. 
+	If the user clicks again on the column header, the elements will be sorted in descending order.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table, th, td {
+			border: 1px solid whitesmoke;
+			border-collapse: collapse;
+			padding: 10px;
+			background-color: black;
+			color: cornsilk;
+		}
+	</style>
+
+	<script>
+		var	ascending = true;
+
+		function sort(col = 0) {
+		var table, rows, switching, i, x, y, shouldSwitch;
+		table = document.querySelector("#myTable");
+		switching = true;
+
+		while (switching) {
+			switching = false;
+			rows = table.rows;
+			
+			for (i = 1; i < (rows.length - 1); i++) {
+			shouldSwitch = false;
+			x = rows[i].getElementsByTagName("td")[col];
+			y = rows[i + 1].getElementsByTagName("td")[col];
+			
+			if (ascending && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() || 
+				!ascending && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+				shouldSwitch = true;
+				break;
+			}
+			}
+			if (shouldSwitch) {
+				// rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+				[rows[i].getElementsByTagName("td")[col].innerHTML, rows[i+1].getElementsByTagName("td")[col].innerHTML] = 
+				[rows[i+1].getElementsByTagName("td")[col].innerHTML, rows[i].getElementsByTagName("td")[col].innerHTML];
+				switching = true;
+			}
+		}
+		ascending = !ascending;	
+		}
+
+	</script>
+
+</head>
+<body>
+	<table id="myTable">
+		<thead style="font-weight:bolder;">
+			<tr><td onclick="sort(0)">COL 1</td>
+				<td onclick="sort(1)">COL 2</td>
+				<td onclick="sort(2)">COL 3</td>
+			</tr>
+		</thead>
+		<tbody>
+		<tr><td>ddddd</td>
+		    <td>ddddd</td>
+		    <td>ddddd</td>
+		</tr>
+		
+		<tr><td>aaa</td>
+		    <td>1111</td>
+		    <td>1111</td>
+		</tr>
+
+		<tr><td>cccc</td>
+		    <td>ffff</td>
+		    <td>ffff</td>
+		</tr>
+
+		<tr><td>bbbb</td>
+		    <td>4444</td>
+		    <td>66666</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

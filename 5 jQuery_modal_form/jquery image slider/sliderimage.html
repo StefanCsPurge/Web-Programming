@@ -1,0 +1,57 @@
+<html>
+Slider
+<head>
+	<style>
+		ul {
+			position: absolute;
+			left: -200px;
+		}
+		li {
+			position: absolute;
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-2.0.3.js"></script>
+	<script>
+		$(document).ready(function(){
+			var picWidth = 200;
+			var poz = 0;		
+			$("li").each(function() {
+				poz += picWidth;
+				$(this).css("left",poz);
+			});
+
+			function slide() {
+				$("li").animate({"left":"+=10px"}, 100, again);
+			}
+
+			function again() {
+				var left = $(this).parent().offset().left + $(this).offset().left;
+				console.log("left="+left);
+				if (left >= 1200) {
+					$(this).css("left",left - 1200);
+				}
+				slide();
+			}
+
+			slide();
+		});
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li><img src="1.jpg"/></li>
+		<li><img src="2.jpg"/></li>
+		<li><img src="1.jpg"/></li>
+		<li><img src="2.jpg"/></li>
+		<li><img src="1.jpg"/></li>
+		<li><img src="2.jpg"/></li>
+		<li><img src="1.jpg"/></li>
+		<li><img src="2.jpg"/></li>
+	</ul>
+</body>
+
+</html> 
+
