@@ -1,0 +1,212 @@
+<!--
+  Create a single HTML web page for a subject you like (e.g. personal home page, photo collection, movie stars, cars etc.). 
+  You can NOT use any CSS or Javascript on your web page! Only basic HTML language. 
+  The web page should be HTML5 valid. You will have to use the following HTML tags in your web page: 
+  <img>,<a>,<table>,<br>,<hr>,<p>,<b>,<div>,<ul>, <li>,<section>,<article>,<footer>,<header>,<aside>,<nav>, 
+  <svg>,<audio>,<video>,<figure>,<figurecaption>,<main>. 
+  Also you should specify the type of document using <!Doctype>. 
+  The page must be at least one screen long and at most 2 screens long (using a resolution of 1024x768 pixels). 
+  The textual content of the page should be relevant to the chosen subject (not "lorem ipsum" text). 
+  This single web page can be edited using any editor you want and can be presented on any browser you prefer. 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+  <link rel="icon" href="anonymous.png">
+  <title>Elemente de securitate cibernetica</title>
+</head>
+
+<body>
+  <header>
+  <nav>
+    <a href="lab1.html">Acasă</a>  &nbsp;&nbsp;
+    <a target="_blank" href="https://whatismyipaddress.com/">IP-ul tău</a>  &nbsp;&nbsp;
+    <a target="_blank" href="https://threatmap.checkpoint.com/ThreatPortal/livemap.html">Atacuri cibernetice live</a> &nbsp;&nbsp; 
+    <a target="_blank" href="spass.jpg">Ghid creare parolă</a>
+  </nav>
+  <hr>
+ </header>
+
+<main>
+<section>
+<h1> Elemente  de  securitate  cibernetică </h1>
+
+<article>
+<h4>Reasons why Cybersecurity is important now more than ever</h4>
+<ul>
+  <li>Cyberattacks affect all people</li>
+  <li>The fast changes in technology will cause a boom in cyberattacks</li>
+  <li>Damage to businesses and loss of jobs</li>
+  <li>Cybersecurity threats are also faced by individuals</li>
+  <li>Cyber concerns may result in increased regulations and legislation</li>
+</ul>
+</article>
+
+<table>
+  <tr>
+    <td><video width="500" height="240" controls>
+      <source src="dem_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video></td>
+    <td rowspan="2">
+      <figure>
+        <img src="2.jpg" width="846" height="846">
+        <figcaption> A representation of the Internet </figcaption>
+      </figure>
+     </td>
+  </tr>
+  <tr><td><img src="1.jpg" width="500" height="550"></td></tr>
+</table>
+  <br>
+</section>
+
+<section>
+  <p>
+     DESPRE  ATACURILE  CIBERNETICE
+   </p>
+    <p> In general, când vine vorba de hacking, există un plan foarte bine gandit în spate. Nu vrem să recurgem direct la a ataca un server dacă nu avem destule informații despre acesta, deoarece ne vom expune riscului de a fi prinși.
+      Trebuie să luam în calcul câțiva pași esențiali pentru această operațiune. Procesul poate dura zile, săptămâni, chiar luni (în funcție de țintă și de riscul existent)
+      și poate fi rezumat în cinci pași:
+  </p>
+  <ol>
+    <li>Strângerea de informații („Reconnaissance”) </li>
+    <li>Scanarea </li>
+    <li>Obținerea accesului</li>
+    <li>Menținerea accesului</li>
+    <li>Acoperirea urmelor</li>
+  </ol>
+  <br>
+  <div class="myDiv">
+    <table>
+      <tr> 
+      <td><img src="kalixd.jpg" width="50" height="50"></td>
+      <td>Unul dintre cele mai cunoscute sisteme de operare folosite de hackeri și pestesteri este
+      <b><i>Kali Linux</i></b>. Este o distribuție de Linux bogată în aplicații bazate pe securitate
+      și testarea vulnerabilităților pentru o multitudine de sisteme informatice. Când vine vorba de
+      de scanări, DDoS, atacuri Web s.a.m.d., Kali Linux este alegerea perfectă și este în
+      același timp potrivit pentru oricine vrea să învețe în mod practic securitate cibernetică.
+      Numele de „Kali” face referire la zeul războiului din mitologia hindusă. În imaginea din stanga
+      este logo-ul acestui sistem de operare.
+      </td>
+      </tr>
+    </table>
+  </div>
+
+  <p><b>1) Strângerea de informații („Reconnaissance”)</b> </p>
+  <p> Înainte de a lansa un atac, hackerii identifică în primul rând o țintă vulnerabilă
+  și caută cele mai bune moduri de a o exploata. Care este structura organizației? Care sunt cei mai
+  influențabili angajați? Ar trebui să țintim website-ul companiei sau poate o terță? Acestea sunt doar cateva
+  dintre întrebările pe care și le pune un atacator înainte de a trece la fapte. Ținta inițială poate fi oricine
+  dinăuntru sau conectat la organizație, de la directori executivi pănă la admini sau furnizori. Hackerii pur si
+  simplu au nevoie de un singur punct de intrare pentru a începe.
+   </p>
+  <table>
+  <tr>   
+   <td>Există diferite metode prin care se pot afla mai multe informații despre un site/server. Una dintre cele
+   mai simple este simpla căutare pe Google/DuckDuckGo a tot ce vrem despre o anumită țintă. Într-un terminal
+   (de exemplu CMD în Windows, sau cel din Kali Linux), cu o simplă comandă precum ”nslookup” (sau ”dig”),
+   poți afla adresa IP a unui site, și folosind comanda ”whois” se pot găsi mai multe despre acel domeniu.</td>
+   <td><img src="ss96.png" width="200" height="150"></td> 
+   <td> <img src="info1.png"width="250" height="110"> </td>
+  </tr>
+  </table>
+
+  <p><b>2) Scanarea</b> </p>
+  <p> Odată ce ținta este identificată, următorul pas este găsirea exactă a unui punct slab ce
+  permite atacatorului să obțină accesul în sistem. Acest lucru este de obicei efectuat prin scanarea
+  amănunțită a rețelei unei organizații / a unei rețele private cu diferite unelte pentru a găsi puncte
+ de pătrundere. Acest pas al procesului de obicei are loc lent și uneori poate dura luni având în vedere
+ că se caută vulnerabilități. ”Nmap” reprezintă una dintre uneltele din Kali Linux care oferă informații
+ mult mai clare despre tipul de rețea, echipamentul folosit, sistemul de operare și așa mai departe.
+</p>
+  <p><b>3) Obținerea accesului</b> </p>
+  <p>
+    Având temele făcute (cercetarea, scanarea rețelelor/serverelor), hacker-ul poate începe atacul.
+    Totul trebuie să fie foarte bine plănuit și fiecare acțiune trebuie să aibă loc pe ascuns
+    (fără să declanșeze alarme și - dacă este posibil - fără să se genereze prea multe log-uri).
+  </p>
+  <aside> Există multe unelte (<i>Burp Suite, SQLmap, Metasploit </i> etc) care pot fi folosite
+  pentru a genera un atac cibernetic, totul depinzând de tehnologie și obiectiv. Tabelele
+”Rainbow” și alte aplicații similare ajută intrușii să fure date de logare, să-și extindă
+privilegiile la cele de admin, pentru ca mai apoi să pătrundă în fiecare sistem din rețea
+care este accesibil prin contul de administrator preluat.</aside>
+
+  <p> <b>4) Menținerea accesului</b></p>
+  <p> Odată intrat în rețea, hacker-ul are opțiunea de a-și pastra accesul.
+  În multe situații, când diferite servere ale unor companii mari (Yahoo, Google, Microsoft etc.)
+ au fost sparte, atacatorii au lăsat ”portițe deschise” pentru a putea revine în sistem. Pentru a
+ realiza acest lucru, hackerii pot instala în secret programe malițioase precum ”root kits”
+ care le permit să se reconecteze cât de des vor. Și cu privilegiile de administrator dobândite
+ mai devreme, intrarea atacatorului nu mai depinde de un singur punct de acces. Aceste portițe
+ sunt numite ”backdoors”, și pot fi de asemenea lăsate în urmă de dezvoltatorii de software
+ ai aplicațiilor pe care le folosim zi de zi.
+  </p>
+  <p> Așadar, un hacker poate extrage date în mod constant, poate urmări ce se întâmplă
+ în organizație, și apoi poate face orice dorește cu informațiile furate (de obicei acestea
+ sunt vândute pe piața neagră de pe Dark Web pentru sume considerabile de crypto-monede).
+  </p>
+  <p> <b>5) Acoperirea urmelor</b></p>
+  <p> Acest pas este de importanță majoră, dar mulți hackeri îl omit (în special cei începători).
+  Ei nu iau în considerare acest proces de ascundere și sfârșesc prinși (în Romănia de DIICOT, SRI sau STS)
+  și judecați pentru infracțiunile comnise. Accesul neautorizat într-un sistem poate rezulta
+  în consecințe serioase (confiscarea echipamentelor informatice, supraveghere impusă, arest etc).
+  </p>
+  <p> <i>”Obfuscation”</i> (”confuzia”) este una dintre tehnici folosite pentru a efectua ascunderea.
+  Scopul acestei metode este de a dezorienta, încurca și distrage de la scopul principal
+  tot procesul de investigație criminalistică. Aceasta poate include: log cleaners, spoofing, dezinformare,
+  backbone hopping, conturi zombie, trojan commands și multe altele. De asemenea, când desfășori procesul
+  de hacking, este crucial să îți schimbi locația fizică, dar și online folosind servicii VPN (Virtual Private Network)
+  și nu numai.
+  </p>
+  <p> Fiecare sistem informatic are diferite metode de a se auto-monitoriza pentru a efectua debugging sau
+  pentru a ajuta la depanare în cazul aparițiilor unor probleme (de exemplu ”log-urile”). O metodă de bază
+  pentru a ne acoperi urmele este ștergerea fișierelor ”Log” (din diferite aplicații, ale userilor sau
+  din diferite sisteme de monitorizare). Pentru Windows există script-uri(care pot fi găsite pe Internet) ce
+  pot șterge toate aceste file-uri. Pentru Linux, comenzile care pot fi folosite sunt: <br />
+  <b># rm ./bash_history</b> - pentru a șterge comenzile date de userul curent <br />
+  <b># vim /var/log/messages</b> - locația în care log-urile pot fi șterse (sau oricare alt file din /var/log,
+  în funcție de aplicația care a fost folosită pentru exploit).
+  </p>
+  <br>
+  <p> În cele din urmă, tehnologia este distructivă numai în mâinile celor care nu realizează că fac parte din unul și același proces cu universul.</p>
+  <br>
+</section>
+
+<table>
+  <tr>
+    <th>Comenzi terminal Linux</th>
+    <th>Folosirea Nmap pentru a scana o țintă</th>
+    <th>Acesta este tot internetul</th>
+  </tr>
+  <tr>
+    <td><img id="myImg1" src="comenzi.jpg" alt="Comenzi terminal Linux" width="600" height="500"></td>
+    <td><img id="myImg2" src="Screenshot9.png" alt="Folosirea Nmap pentru a scana o țintă" width="600" height="500"></td>
+    <td><img id="myImg3" src="allboi.jpg" alt="Acesta este tot internetul" width="600" height="500"></td>
+  </tr>
+</table>
+</main>
+
+<table> <tr><td>Congrats! You've reached the end of it all ... </td>
+  <td><audio controls>
+    <source src="ms_shutdown.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  </td>
+  </tr>
+</table>
+
+<hr>
+<footer>
+  <br />
+  <p>Informații de contact </br> Anon.</p>
+  <svg width="380" height="20">
+    <rect width="380" height="20"/>
+    Sorry, your browser does not support inline SVG.
+  </svg>
+  <p><i>We are drowning in information while starving for wisdom.</i> </p>
+</footer>
+</body>
+
+</html>

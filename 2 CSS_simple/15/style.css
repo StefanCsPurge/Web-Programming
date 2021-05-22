@@ -1,0 +1,63 @@
+/* 15. 
+Write a web page which should contain a rise-up horizontal menu (as oposed to a drop-down horizontal menu).
+The menu should be displayed in the bottom of the page and should contain at least 5 items (displayed horizontaly, side by side) 
+and each item should contain at least 5 commands. */
+
+
+#Inner710 { width: 880px; margin: auto; text-align: center; }
+.box { text-align: justify; font-style: italic; margin: 25px}
+
+#menu {
+position: fixed;
+bottom: 0px;
+}
+
+#menu ul {
+
+list-style: none;
+margin: 0;
+padding: 0;
+width: 11em;
+float: left;
+}
+
+#menu a, #menu h2 {
+font: bold 11px/16px arial, helvetica, sans-serif;
+display: block;
+border-width: 1px;
+border-style: solid;
+border-color: #d0d0d0 #808080 #505050 #b0b0b0;
+margin: 0;
+padding: 2px 3px;
+}
+
+#menu h2 {
+color: #f0f0f0;
+background: #2a45b1;
+text-transform: uppercase;
+}
+
+#menu a {
+color: #000;
+background: #efefef;
+text-decoration: none;
+}
+
+#menu a:hover {
+color: #102030;
+background: #d0d0f0;
+display: block;
+}
+
+#menu ul ul
+{
+display: none;
+position: absolute;
+bottom: 21px;
+}
+
+#menu ul li:hover ul 
+ {display: block;} 
+
+
+
