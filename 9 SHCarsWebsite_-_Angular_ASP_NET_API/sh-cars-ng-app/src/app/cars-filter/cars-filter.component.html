@@ -1,0 +1,37 @@
+
+<section class="browsing">
+  <button type="button" (click)="goHome()" style="margin-bottom: 10px">Home</button> <br>
+  <label>
+    <select name="Severity Filter" [(ngModel)]="selectedOption" (change)="getFilteredCars()">
+      <option selected>choose fuel</option>
+      <option *ngFor="let fuel of fuels">
+          {{fuel}}
+      </option>
+    </select>
+  </label>
+  <br><br>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>Model</th>
+    <th>HP</th>
+    <th>Fuel</th>
+    <th>Price</th>
+    <th>Color</th>
+    <th>Age</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of f_cars">
+      <td>{{car.id}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.hp}}</td>
+      <td>{{car.fuel}}</td>
+      <td>{{car.price}}</td>
+      <td>{{car.color}}</td>
+      <td>{{car.age}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <p *ngIf="prevOption"> Previous cars w/ {{prevOption}} </p>
+  <br>
+</section>

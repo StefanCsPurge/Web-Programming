@@ -1,0 +1,77 @@
+
+<div class="crud">
+  <button type="button" (click)="goHome()">Home</button> <br>
+  <section style="float: left; display: inline;">
+    <br>
+    <table class="all-cars">
+      <thead>
+      <th>ID</th>
+      <th>Model</th>
+      <th>HP</th>
+      <th>Fuel</th>
+      <th>Price</th>
+      <th>Color</th>
+      <th>Age</th>
+      <th> </th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let car of cars">
+        <td>{{car.id}}</td>
+        <td>{{car.model}}</td>
+        <td>{{car.hp}}</td>
+        <td>{{car.fuel}}</td>
+        <td>{{car.price}}</td>
+        <td>{{car.color}}</td>
+        <td>{{car.age}}</td>
+        <td>
+          <button class='btnAdd' type='button' (click)="onAdd(car)">Add</button>
+          <button class='btnUpdate' type='button' (click)="onUpdate(car)">Update</button>
+          <button class='btnDelete' type='button' (click)="onDelete(car.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <br>
+  </section>
+
+  <section id="add_form" style="float: left; display: none; padding-left: 50px; padding-top: 12px">
+    <form action="" method="post">
+      <input id="model1" type="text" #newModel placeholder="model" style="margin: 5px; width: 191px">
+      Model<br>
+      <input id="hp1" type="text" #newHp placeholder="hp" style="margin: 5px; width: 191px">
+      HP<br>
+      <input id="fuel1" type="text" #newFuel placeholder="fuel" style="margin: 5px; width: 191px">
+      Fuel<br>
+      <input id="price1" type="text" #newPrice placeholder="price" style="margin: 5px; width: 191px">
+      Price<br>
+      <input id="color1" type="text" #newColor placeholder="color" style="margin: 5px; width: 191px">
+      Color<br>
+      <input id="age1" type="text" #newAge placeholder="age" style="margin: 5px; width: 191px">
+      Age<br>
+      <button id="submitAddBtn" style="margin-top: 10px" (click)="addCar(newModel,newHp,newFuel,newPrice,newColor,newAge)">
+        Add new car</button>
+    </form>
+  </section>
+
+  <section id="update_form" style="float: left; display: none; padding-left: 50px; padding-top: 12px">
+    <form action="" method="post">
+      <input id="id2" type="text" #uid placeholder="id" readonly style="margin: 5px; width: 191px">
+      ID<br>
+      <input id="model2" type="text" #uModel placeholder="model" style="margin: 5px; width: 191px">
+      Model<br>
+      <input id="hp2" type="text" #uHp placeholder="hp" style="margin: 5px; width: 191px">
+      HP<br>
+      <input id="fuel2" type="text" #uFuel placeholder="fuel" style="margin: 5px; width: 191px">
+      Fuel<br>
+      <input id="price2" type="text" #uPrice placeholder="price" style="margin: 5px; width: 191px">
+      Price<br>
+      <input id="color2" type="text" #uColor placeholder="color" style="margin: 5px; width: 191px">
+      Color<br>
+      <input id="age2" type="text" #uAge placeholder="age" style="margin: 5px; width: 191px">
+      Age<br>
+      <button id="submitUpdateBtn" style="margin-top: 10px" (click)="updateCar(uid,uModel,uHp,uFuel,uPrice,uColor,uAge)">
+        Update</button>
+    </form>
+  </section>
+</div>

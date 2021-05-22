@@ -1,0 +1,12 @@
+<div class="login-container">
+  <h3> LOGIN </h3>
+  <form>
+    <label for="user"> Username </label>
+    <input type="text" id="user" placeholder="username" name="user" #username><br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="password" #pwd><br>
+    <button type="button" id="login-button" (click)="login(username.value,pwd.value)">Login</button>
+  </form>
+  <section id="error"></section>
+
+</div>
