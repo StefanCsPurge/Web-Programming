@@ -1,0 +1,26 @@
+
+form label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 175px;
+    text-align: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+form .field {
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+}
+
+.submit{
+    margin-top: 5px;
+    float: left;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
