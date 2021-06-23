@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Homepage</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script language="javascript">
+        let user_id = -1;
+        $(document).ready(function () {
+            if (JSON.parse(sessionStorage["currentUser"]) !== null) {
+                user_id = JSON.parse(sessionStorage["currentUser"])["userId"];
+                let username = JSON.parse(sessionStorage["currentUser"])["username"];
+                $('#greeting').html("Welcome <i>" + username + "</i>");
+                // user successfully logged in now 
+            } else {
+                location.href = "Login";
+            }
+        });
+
+        function showChannels() {
+            $.get("/Api/GetPersonChannels", { name: $("#name-input").val() },
+                function (data, status) {
+                    $("#channels").html(data);
+                });
+        }
+
+        function showSubscriptions() {
+            $.get("/Api/GetSubscriptions", { userid: user_id },
+                function (data, status) {
+                    $("#subscriptions").html(data);
+                });
+        }
+
+        function subscribe() {
+            $.get("/Api/SubscribeToChannel", { userid: user_id, channel: $("#channel-input").val() },
+                function (data, status) {
+                    showChannels();
+                    $("#subscribe-message").html(data);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="greeting"></h1>
+
+    <br>
+    <div>
+        <input name="name" type="text" id="name-input" placeholder="person name">
+        <button type="button" onclick="showChannels()">Show channels</button>
+        <br>
+    </div>
+    <section id="channels"> </section>
+    <br>
+
+    <button type="button" onclick="showSubscriptions()">Show subscriptions</button>
+    <br>
+    <section id="subscriptions"> </section>
+
+    <br><br>
+    <div>
+        <input name="channelname" type="text" id="channel-input" placeholder="channel name">
+        <button type="button" onclick="subscribe()">Subscribe</button>
+        <br><br>
+        <section id="subscribe-message"> </section>
+    </div>
+
+    <br>
+
+</body>
+</html>
+
