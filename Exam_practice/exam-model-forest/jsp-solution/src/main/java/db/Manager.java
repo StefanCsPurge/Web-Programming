@@ -9,7 +9,7 @@ public class Manager {
 
     public static void connect() {
         if(connection == null) {
-            String url = "jdbc:mysql://127.0.0.1:3306/phplab";
+            String url = "jdbc:mysql://127.0.0.1:3306/catalog";
             try{
                 Class.forName( "com.mysql.jdbc.Driver" );
                 connection = DriverManager.getConnection( url, "root", "" );

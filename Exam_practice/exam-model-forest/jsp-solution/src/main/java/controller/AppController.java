@@ -21,8 +21,8 @@ public class AppController {
             }
             return null;
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -46,8 +46,8 @@ public class AppController {
             }
             return assets;
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
             return new ArrayList<>();
         }
 
@@ -59,8 +59,8 @@ public class AppController {
         try {
             stmt = Manager.getConnection().prepareStatement(sql);
             stmt.execute();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }

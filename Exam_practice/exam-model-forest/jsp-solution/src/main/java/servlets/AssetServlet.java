@@ -24,8 +24,10 @@ public class AssetServlet extends HttpServlet {
             String newAssetsToAddJSON = request.getParameter("newAssetsToAdd");
             System.out.println("received post");
             System.out.println(newAssetsToAddJSON);
-            ObjectMapper mapper = new ObjectMapper();
+
+            ObjectMapper mapper = new ObjectMapper();   // JSON magic happens here
             Asset[] assets = mapper.readValue(newAssetsToAddJSON, Asset[].class);
+
             for(Asset asset : assets) {
                 System.out.println(asset.toString());
                 AppController.addAsset(asset.getUserId(), asset.getName(), asset.getDescription(), asset.getValue());
