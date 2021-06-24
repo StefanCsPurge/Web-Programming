@@ -1,0 +1,43 @@
+<H3>
+  Welcome {{this.user}} !
+</H3>
+
+<div>
+  <input [(ngModel)]="username" id="user" type="text" placeholder="user"> <BR><br>
+  <input [(ngModel)]="destination" id="destination" type="text" placeholder="destination"> <BR><br>
+  <button (click)="addBan()">Add ban</button>
+</div>
+<br><br>
+<input [(ngModel)]="search_dest" id="search" type="text" placeholder="search destination" (input)="sendTheNewValue($event)">
+<br><br>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Destination</th>
+    <th>Country</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let d of foundDestinations">
+      <td>{{d.id}}</td>
+      <td>{{d.destination}}</td>
+      <td>{{d.country}}</td>
+      <td>{{d.price}}</td>
+  </tr>
+</table>
+<br><br>
+<button (click)="showMostPopularDests()">Show top 3 searched destinations</button>
+<br><br>
+<table border="1" *ngIf="showTop3">
+  <tr>
+    <th>ID</th>
+    <th>Destination</th>
+    <th>Country</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let d of top3">
+    <td>{{d.id}}</td>
+    <td>{{d.destination}}</td>
+    <td>{{d.country}}</td>
+    <td>{{d.price}}</td>
+  </tr>
+</table>
