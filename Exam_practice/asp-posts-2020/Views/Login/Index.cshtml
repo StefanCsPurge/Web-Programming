@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        .container {
+            width: 500px;
+            clear: both;
+        }
+        .container input {
+            width: 100%;
+            clear: both;
+        }
+    </style>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <script language="javascript">$(document).ready(function () {
+            sessionStorage.setItem("currentUser", null);
+            $("#login-button").click(function () {
+                if ($('#user').val().length) {
+
+                    var temp = { username: $('#user').val() };
+                    sessionStorage.setItem("currentUser", JSON.stringify(temp));
+                    console.log(JSON.parse(sessionStorage["currentUser"]));
+                    location.href = 'Api';
+
+                } else {
+                    alert("Both fields should be non-empty!")
+                }
+            });
+        });</script>
+</head>
+<body>
+    <div class="containter">
+        <h3>Login</h3>
+        <form>
+            <label for="user">Username:</label>
+            <input type="text" id="user" name="user">
+            <button type="button" id="login-button">Let's go</button>
+        </form>
+        <section id="error">
+        </section>
+    </div>
+</body>
+</html>
+

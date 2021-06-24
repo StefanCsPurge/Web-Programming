@@ -1,0 +1,128 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        form label {
+            display: inline-block;
+            float: left;
+            clear: left;
+            width: 80px;
+            text-align: right;
+            margin-right: 5px;
+        }
+
+        form input {
+            display: inline-block;
+            float: left;
+        }
+    </style>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script language="javascript">
+        let username = "";
+        $(document).ready(function () {
+            if (JSON.parse(sessionStorage["currentUser"]) !== null) {
+                //let id = JSON.parse(sessionStorage["currentUser"])["userId"];
+                username = JSON.parse(sessionStorage["currentUser"])["username"];
+                $('#greeting').html("Welcome <i>" + username + "</i>");
+
+                getAllPosts();
+                setInterval(checkForNotifications, 500);
+
+            } else {
+                location.href = "Login";
+            }
+        });
+
+        function getAllPosts() {
+            $.get("Api/GetAllPosts",
+                { action: "getAllPosts" },
+                function (data, status) {
+                    $("#posts-section").html(data);
+                }
+            );
+        }
+
+        function checkForNotifications() {
+            $.ajax({
+                url: "Api/CheckNotification",
+                type: "GET",
+                data: { action: "checkNotification", user: username },
+                success: function (notification) {
+                    //Check if any notifications are returned - if so then display alert
+                    if (notification.length > 0) {
+                        getAllPosts();
+                        alert(notification);
+                    }
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function updatePost() {
+            $.post(
+                "Api/UpdatePost",
+                {
+                    action: "updatePost",
+                    user: username,
+                    postid: $("#post-id").val(),
+                    topicname: $("#topic-name").val(),
+                    text: $("#text").val(),
+                    date: Date.now()
+                },
+                function (data) {
+                    getAllPosts();
+                }
+            );
+        }
+
+        function addPost() {
+            $.post(
+                "Api/AddPost",
+                {
+                    action: "addPost",
+                    user: username,
+                    topicname: $("#topic-name").val(),
+                    text: $("#text").val(),
+                    date: Date.now()
+                },
+                function (data) {
+                    getAllPosts();
+                    $("#post-id").val("");
+                    $("#topic-name").val("");
+                    $("#text").val("");
+                }
+            );
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="greeting"></h1>
+    <label>
+        Posts
+    </label>
+    <br><br>
+    <section id="posts-section"> </section>
+    <br><br>
+
+    <form>
+        <label for="post-id">Post ID: </label> <input type="text" id="post-id">
+        <br><br>
+        <label for="topic-name">Topic name: </label> <input type="text" id="topic-name">
+        <br><br>
+        <label for="text">Text: </label> <input type="text" id="text">
+        <br><br>
+        <button type="button" id="update-button" onclick="updatePost()">Update post</button>
+        <button type="button" id="add-button" onclick="addPost()">Add post</button>
+    </form>
+</body>
+</html>
+
